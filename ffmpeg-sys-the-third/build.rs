@@ -192,7 +192,6 @@ static AVFORMAT_FEATURES: &[AVFeature] = &[
     AVFeature::new("COMPUTE_PKT_FIELDS2"),
     AVFeature::new("INTERNAL_TIMING"),
     AVFeature::new("NO_DEFAULT_TLS_VERIFY"),
-
     // after 5.0 (> v59)
     AVFeature::new("AVSTREAM_CLASS"),
     // for all eternity
@@ -861,9 +860,18 @@ fn maybe_search_include(include_paths: &[PathBuf], header: &str) -> Option<Strin
 }
 
 fn link_to_libraries(statik: bool) {
-    let ffmpeg_ty = if statik { "static" } else { "dylib" };
+    env::set_var("FFMPEG_DIR", "/home/emre/.local/src/FFmpeg");
+
+    println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavcodec");
+    println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavdevice");
+    println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavfilter");
+    println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavformat");
+    println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavutil");
+    println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libswresample");
+    println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libswscale");
+
     for lib in LIBRARIES.iter().filter(|lib| lib.enabled()) {
-        println!("cargo:rustc-link-lib={}={}", ffmpeg_ty, lib.name);
+        println!("cargo:rustc-link-lib=static={}", lib.name);
     }
     if cargo_feature_enabled("build_zlib") && cfg!(target_os = "linux") {
         println!("cargo:rustc-link-lib=z");
