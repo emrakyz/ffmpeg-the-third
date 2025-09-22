@@ -860,8 +860,6 @@ fn maybe_search_include(include_paths: &[PathBuf], header: &str) -> Option<Strin
 }
 
 fn link_to_libraries(statik: bool) {
-    env::set_var("FFMPEG_DIR", "/home/emre/.local/src/FFmpeg");
-
     println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavcodec");
     println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavdevice");
     println!("cargo:rustc-link-search=native=/home/emre/.local/src/FFmpeg/libavfilter");
