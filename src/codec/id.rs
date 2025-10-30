@@ -660,16 +660,6 @@ pub enum Id {
     #[cfg(feature = "ffmpeg_8_0")]
     ADPCM_IMA_XBOX,
     #[cfg(feature = "ffmpeg_8_0")]
-    ADPCM_IMA_HVQM4,
-    #[cfg(feature = "ffmpeg_8_0")]
-    ADPCM_IMA_PDA,
-    #[cfg(feature = "ffmpeg_8_0")]
-    ADPCM_N64,
-    #[cfg(feature = "ffmpeg_8_0")]
-    ADPCM_IMA_HVQM2,
-    #[cfg(feature = "ffmpeg_8_0")]
-    ADPCM_IMA_MAGIX,
-    #[cfg(feature = "ffmpeg_8_0")]
     ADPCM_SANYO,
     #[cfg(feature = "ffmpeg_8_0")]
     G728,
@@ -1348,16 +1338,6 @@ impl From<AVCodecID> for Id {
             #[cfg(feature = "ffmpeg_8_0")]
             AV_CODEC_ID_ADPCM_IMA_XBOX => Id::ADPCM_IMA_XBOX,
             #[cfg(feature = "ffmpeg_8_0")]
-            AV_CODEC_ID_ADPCM_IMA_HVQM4 => Id::ADPCM_IMA_HVQM4,
-            #[cfg(feature = "ffmpeg_8_0")]
-            AV_CODEC_ID_ADPCM_IMA_PDA => Id::ADPCM_IMA_PDA,
-            #[cfg(feature = "ffmpeg_8_0")]
-            AV_CODEC_ID_ADPCM_N64 => Id::ADPCM_N64,
-            #[cfg(feature = "ffmpeg_8_0")]
-            AV_CODEC_ID_ADPCM_IMA_HVQM2 => Id::ADPCM_IMA_HVQM2,
-            #[cfg(feature = "ffmpeg_8_0")]
-            AV_CODEC_ID_ADPCM_IMA_MAGIX => Id::ADPCM_IMA_MAGIX,
-            #[cfg(feature = "ffmpeg_8_0")]
             AV_CODEC_ID_ADPCM_SANYO => Id::ADPCM_SANYO,
             #[cfg(feature = "ffmpeg_8_0")]
             AV_CODEC_ID_G728 => Id::G728,
@@ -2033,16 +2013,6 @@ impl From<Id> for AVCodecID {
             Id::PRORES_RAW => AV_CODEC_ID_PRORES_RAW,
             #[cfg(feature = "ffmpeg_8_0")]
             Id::ADPCM_IMA_XBOX => AV_CODEC_ID_ADPCM_IMA_XBOX,
-            #[cfg(feature = "ffmpeg_8_0")]
-            Id::ADPCM_IMA_HVQM4 => AV_CODEC_ID_ADPCM_IMA_HVQM4,
-            #[cfg(feature = "ffmpeg_8_0")]
-            Id::ADPCM_IMA_PDA => AV_CODEC_ID_ADPCM_IMA_PDA,
-            #[cfg(feature = "ffmpeg_8_0")]
-            Id::ADPCM_N64 => AV_CODEC_ID_ADPCM_N64,
-            #[cfg(feature = "ffmpeg_8_0")]
-            Id::ADPCM_IMA_HVQM2 => AV_CODEC_ID_ADPCM_IMA_HVQM2,
-            #[cfg(feature = "ffmpeg_8_0")]
-            Id::ADPCM_IMA_MAGIX => AV_CODEC_ID_ADPCM_IMA_MAGIX,
             #[cfg(feature = "ffmpeg_8_0")]
             Id::ADPCM_SANYO => AV_CODEC_ID_ADPCM_SANYO,
             #[cfg(feature = "ffmpeg_8_0")]

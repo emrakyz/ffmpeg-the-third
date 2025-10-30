@@ -26,11 +26,6 @@ pub enum TransferCharacteristic {
     SMPTE2084,
     SMPTE428,
     ARIB_STD_B67,
-
-    #[cfg(feature = "ffmpeg_8_0")]
-    ExtBase,
-    #[cfg(feature = "ffmpeg_8_0")]
-    ExtNb,
 }
 
 impl TransferCharacteristic {
@@ -69,11 +64,6 @@ impl From<AVColorTransferCharacteristic> for TransferCharacteristic {
             AVCOL_TRC_SMPTE428 => TransferCharacteristic::SMPTE428,
             AVCOL_TRC_ARIB_STD_B67 => TransferCharacteristic::ARIB_STD_B67,
 
-            #[cfg(feature = "ffmpeg_8_0")]
-            AVCOL_TRC_EXT_BASE => TransferCharacteristic::ExtBase,
-            #[cfg(feature = "ffmpeg_8_0")]
-            AVCOL_TRC_EXT_NB => TransferCharacteristic::ExtNb,
-
             #[cfg(feature = "non-exhaustive-enums")]
             _ => unimplemented!(),
         }
@@ -102,11 +92,6 @@ impl From<TransferCharacteristic> for AVColorTransferCharacteristic {
             TransferCharacteristic::SMPTE2084 => AVCOL_TRC_SMPTE2084,
             TransferCharacteristic::SMPTE428 => AVCOL_TRC_SMPTE428,
             TransferCharacteristic::ARIB_STD_B67 => AVCOL_TRC_ARIB_STD_B67,
-
-            #[cfg(feature = "ffmpeg_8_0")]
-            TransferCharacteristic::ExtBase => AVCOL_TRC_EXT_BASE,
-            #[cfg(feature = "ffmpeg_8_0")]
-            TransferCharacteristic::ExtNb => AVCOL_TRC_EXT_NB,
         }
     }
 }
