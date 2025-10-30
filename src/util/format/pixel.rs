@@ -470,6 +470,30 @@ pub enum Pixel {
     GBRAP32LE,
 
     #[cfg(feature = "ffmpeg_8_0")]
+    GRAY10MSBBE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    GRAY10MSBLE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    GRAY12MSBBE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    GRAY12MSBLE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV420P10MSBBE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV420P10MSBLE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV420P12MSBBE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV420P12MSBLE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV422P10MSBBE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV422P10MSBLE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV422P12MSBBE,
+    #[cfg(feature = "ffmpeg_8_0")]
+    YUV422P12MSBLE,
+    #[cfg(feature = "ffmpeg_8_0")]
     YUV444P10MSBBE,
     #[cfg(feature = "ffmpeg_8_0")]
     YUV444P10MSBLE,
@@ -948,6 +972,30 @@ impl From<AVPixelFormat> for Pixel {
             #[cfg(feature = "ffmpeg_8_0")]
             AV_PIX_FMT_GBRAP32LE => Pixel::GBRAP32LE,
 
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_GRAY10MSBBE => Pixel::GRAY10MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_GRAY10MSBLE => Pixel::GRAY10MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_GRAY12MSBBE => Pixel::GRAY12MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_GRAY12MSBLE => Pixel::GRAY12MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV420P10MSBBE => Pixel::YUV420P10MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV420P10MSBLE => Pixel::YUV420P10MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV420P12MSBBE => Pixel::YUV420P12MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV420P12MSBLE => Pixel::YUV420P12MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV422P10MSBBE => Pixel::YUV422P10MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV422P10MSBLE => Pixel::YUV422P10MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV422P12MSBBE => Pixel::YUV422P12MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AV_PIX_FMT_YUV422P12MSBLE => Pixel::YUV422P12MSBLE,
             #[cfg(feature = "ffmpeg_8_0")]
             AV_PIX_FMT_YUV444P10MSBBE => Pixel::YUV444P10MSBBE,
             #[cfg(feature = "ffmpeg_8_0")]
@@ -1448,6 +1496,30 @@ impl From<Pixel> for AVPixelFormat {
             #[cfg(feature = "ffmpeg_8_0")]
             Pixel::GBRAP32LE => AV_PIX_FMT_GBRAP32LE,
 
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::GRAY10MSBBE => AV_PIX_FMT_GRAY10MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::GRAY10MSBLE => AV_PIX_FMT_GRAY10MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::GRAY12MSBBE => AV_PIX_FMT_GRAY12MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::GRAY12MSBLE => AV_PIX_FMT_GRAY12MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV420P10MSBBE => AV_PIX_FMT_YUV420P10MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV420P10MSBLE => AV_PIX_FMT_YUV420P10MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV420P12MSBBE => AV_PIX_FMT_YUV420P12MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV420P12MSBLE => AV_PIX_FMT_YUV420P12MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV422P10MSBBE => AV_PIX_FMT_YUV422P10MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV422P10MSBLE => AV_PIX_FMT_YUV422P10MSBLE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV422P12MSBBE => AV_PIX_FMT_YUV422P12MSBBE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Pixel::YUV422P12MSBLE => AV_PIX_FMT_YUV422P12MSBLE,
             #[cfg(feature = "ffmpeg_8_0")]
             Pixel::YUV444P10MSBBE => AV_PIX_FMT_YUV444P10MSBBE,
             #[cfg(feature = "ffmpeg_8_0")]

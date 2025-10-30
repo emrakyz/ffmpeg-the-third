@@ -26,6 +26,11 @@ pub enum Primaries {
     JEDEC_P22,
     #[cfg(feature = "ffmpeg_4_3")]
     EBU3213,
+
+    #[cfg(feature = "ffmpeg_8_0")]
+    ExtBase,
+    #[cfg(feature = "ffmpeg_8_0")]
+    ExtNb,
 }
 
 impl Primaries {
@@ -67,6 +72,11 @@ impl From<AVColorPrimaries> for Primaries {
             #[cfg(feature = "ffmpeg_4_3")]
             AVCOL_PRI_EBU3213 => Primaries::EBU3213,
 
+            #[cfg(feature = "ffmpeg_8_0")]
+            AVCOL_PRI_EXT_BASE => Primaries::ExtBase,
+            #[cfg(feature = "ffmpeg_8_0")]
+            AVCOL_PRI_EXT_NB => Primaries::ExtNb,
+
             #[cfg(feature = "non-exhaustive-enums")]
             _ => unimplemented!(),
         }
@@ -95,6 +105,11 @@ impl From<Primaries> for AVColorPrimaries {
             Primaries::JEDEC_P22 => AVCOL_PRI_JEDEC_P22,
             #[cfg(feature = "ffmpeg_4_3")]
             Primaries::EBU3213 => AVCOL_PRI_EBU3213,
+
+            #[cfg(feature = "ffmpeg_8_0")]
+            Primaries::ExtBase => AVCOL_PRI_EXT_BASE,
+            #[cfg(feature = "ffmpeg_8_0")]
+            Primaries::ExtNb => AVCOL_PRI_EXT_NB,
         }
     }
 }
