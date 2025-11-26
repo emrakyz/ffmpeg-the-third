@@ -23,7 +23,7 @@ libc = "0.2.177"
 bitflags = "2.10.0"
 
 [dependencies.image]
-version = "0.25"
+version = "0.25.9"
 optional = true
 
 [dependencies.ffmpeg-sys-the-third]
